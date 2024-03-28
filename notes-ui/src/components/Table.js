@@ -20,7 +20,9 @@ class Table extends Component {
 
     componentDidMount() {
         this.setState({ isLoading: true })
+
         let api_url = 'http://172.174.248.235:4006/notes';
+ e6b62ca6d70fb0c02c3c6aa8f52a8382ef664467
         fetch(api_url)
             .then(res => {
                 if(res.status >= 400) {
@@ -132,4 +134,8 @@ class Table extends Component {
     }
 }
 
+<<<<<<< HEAD
 export default Table
+=======
+export default Table
+>>>>>>> e6b62ca6d70fb0c02c3c6aa8f52a8382ef664467
