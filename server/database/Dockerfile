@@ -1,11 +1,8 @@
+FROM mysql:8.0.3
 
-# Use the official MySQL 8.0 image from Docker Hub
-FROM mysql:8.0
-
-# Environment variables for MySQL
-ENV MYSQL_DATABASE=notes 
-    MYSQL_USER=root
-    MYSQL_PASSWORD=password
+ENV MYSQL_DATABASE=notes
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_PASSWORD=password
 
 # Copy custom SQL scripts to initialize the database
 COPY ./notes.sql /docker-entrypoint-initdb.d/
