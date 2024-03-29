@@ -3,13 +3,13 @@ version: '3'
 services:
   my-react-app:
     build: ./notes-ui
-    image: dev-frontend:v2
+    image: priy8808/mine-repo:dev-frontend:v2
     ports:
       - "3000:3000"
 
   my-backend:
     build: ./server 
-    image: dev-backend:v2
+    image: priy8808/mine-repo:dev-backend:v2
     environment:
       - APP_ENV=test  
     ports:
@@ -17,6 +17,6 @@ services:
 
 
   my-db:
-      image: dev-db:latest
+      image: priy8808/mine-repo:dev-db:latest
       ports:
         - "3306:3306"
