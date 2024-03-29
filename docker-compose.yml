@@ -17,6 +17,6 @@ services:
 
 
   my-db:
-      image: priy8808/mine-repo:dev-db:latest
+      image: priy8808/mine-repo:dev-db:v2
       ports:
         - "3306:3306"
