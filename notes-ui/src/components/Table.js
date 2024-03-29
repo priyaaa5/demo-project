@@ -134,8 +134,5 @@ class Table extends Component {
     }
 }
 
-<<<<<<< HEAD
 export default Table
-=======
-export default Table
->>>>>>> e6b62ca6d70fb0c02c3c6aa8f52a8382ef664467
+
