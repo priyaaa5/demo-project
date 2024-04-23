@@ -2,35 +2,26 @@ version: '3'
 
 services:
   my-react-app:
-    build: ./notes-ui
+    image: priya8808/dev-frontend  # Use image without specifying a tag
     container_name: my-react-app
     ports:
       - "3000:3000"
-    volumes:
-      - ./notes-ui:/app  
     links:
       - my-db
 
   my-backend:
-    build: ./server 
+    image: priya8808/dev-backend  # Use image without specifying a tag
     container_name: my-backend
     environment:
-      - APP_ENV=test  
+      - APP_ENV=test
     ports:
       - "4006:4006"
-    volumes:
-      - ./server:/app  
     links:
       - my-db
 
   my-db:
-    build: ./server/database
+    image: priya8808/dev-db  # Use image without specifying a tag
     container_name: dev-db
     ports:
       - "3306:3306"
-    volumes:
-      - server-database:/var/lib/mysql 
 
-
-volumes:
-        server-database:
