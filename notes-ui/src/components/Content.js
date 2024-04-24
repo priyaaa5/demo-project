@@ -14,7 +14,7 @@ class Content extends Component {
 
     componentDidMount() {
         this.setState({ isLoading: true }) 
-        let api_url = 'http://52.188.226.205:4007/notecontent?id='+this.props.match.params.id;
+        let api_url = 'http://localhost:4006/notecontent?id='+this.props.match.params.id;
  
         fetch(api_url)
             .then(res => {
