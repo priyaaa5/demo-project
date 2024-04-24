@@ -3,7 +3,7 @@ version: '3'
 services:
   my-react-app:
     image: priy8808/uat-frontend:v${BUILD_NUMBER}
-    container_name: my-react-app
+    container_name: my-react-app-uat
     ports:
       - "3001:3000"
     links:
@@ -11,7 +11,7 @@ services:
 
   my-backend:
     image: priy8808/uat-backend:v${BUILD_NUMBER}
-    container_name: my-backend
+    container_name: my-backend-uat
     environment:
       - APP_ENV=test
     ports:
