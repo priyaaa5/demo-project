@@ -2,7 +2,7 @@ version: '3'
 
 services:
   my-react-app:
-    image: priy8808/dev-frontend:${BUILD_NUMBER}
+    image: priy8808/dev-frontend:v${BUILD_NUMBER}
     container_name: my-react-app
     ports:
       - "3000:3000"
@@ -10,7 +10,7 @@ services:
       - my-db
 
   my-backend:
-    image: priy8808/dev-backend:${BUILD_NUMBER}
+    image: priy8808/dev-backend:v${BUILD_NUMBER}
     container_name: my-backend
     environment:
       - APP_ENV=test
@@ -20,7 +20,7 @@ services:
       - my-db
 
   my-db:
-    image: priy8808/dev-db:${BUILD_NUMBER}
+    image: priy8808/dev-db:v${BUILD_NUMBER}
     container_name: dev-db
     ports:
       - "3306:3306"
