@@ -2,7 +2,7 @@ version: '3'
 
 services:
   my-react-app:
-    image: "priy8808/uat-frontend:${BUILD_NUMBER}"
+    image: priy8808/uat-frontend:1
     container_name: my-react-app-uat
     ports:
       - "3001:3000"
@@ -10,7 +10,7 @@ services:
       - my-db
 
   my-backend:
-    image: "priy8808/uat-backend:${BUILD_NUMBER}"
+    image: priy8808/uat-backend:1
     container_name: my-backend-uat
     environment:
       - APP_ENV=test
@@ -20,7 +20,7 @@ services:
       - my-db
 
   my-db:
-    image: "priy8808/uat-db:${BUILD_NUMBER}"
+    image: priy8808/uat-db:1
     container_name: uat-db
     ports:
       - "3307:3306"
