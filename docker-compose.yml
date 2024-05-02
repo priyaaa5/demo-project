@@ -27,5 +27,5 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
- volumes:
-   db_data:
+volumes:
+  db_data:
