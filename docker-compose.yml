@@ -1,16 +1,16 @@
 version: '3'
 
 services:
-  my-react-app:
+  uat-my-react-app:
     image: priy8808/uat-frontend:1
     container_name: my-react-app-uat
     ports:
       - "3001:3000"
     links:
-      - my-db
+      - uat-my-db
     restart: unless-stopped
 
-  my-backend:
+  uat-my-backend:
     image: priy8808/uat-backend:1
     container_name: my-backend-uat
     environment:
@@ -18,10 +18,10 @@ services:
     ports:
       - "4007:4006"
     links:
-      - my-db
+      - uat-my-db
     restart: unless-stopped
 
-  my-db:
+  uat-my-db:
     image: priy8808/uat-db:1
     container_name: uat-db
     ports:
