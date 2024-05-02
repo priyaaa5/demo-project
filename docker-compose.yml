@@ -1,16 +1,15 @@
 version: '3'
 
 services:
-  my-react-app:
+  dev-my-react-app:
     image: priy8808/dev-frontend:1
     container_name: my-react-app-dev
     ports:
       - "3000:3000"
     links:
       - my-db
-    restart: unless-stopped
 
-  my-backend:
+  dev-my-backend:
     image: priy8808/dev-backend:1
     container_name: my-backend-dev
     environment:
@@ -19,11 +18,9 @@ services:
       - "4006:4006"
     links:
       - my-db
-    restart: unless-stopped
 
-  my-db:
+  dev-my-db:
     image: priy8808/dev-db:1
     container_name: dev-db
     ports:
       - "3306:3306"
-    restart: unless-stopped
