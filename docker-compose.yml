@@ -1,11 +1,18 @@
 version: '3'
 
 services:
-  prod-my-react-app:
+ prod-my-react-app-1:
     image: priy8808/prod-frontend:1
-    container_name: my-react-app-prod
+    container_name: my-react-app-prod-1
     ports:
       - "3002:3000"
+    links:
+      - prod-my-db
+
+  prod-my-react-app-2:
+    image: priy8808/prod-frontend:1
+    container_name: my-react-app-prod-2
+    ports:
       - "3003:3000"
     links:
       - prod-my-db
