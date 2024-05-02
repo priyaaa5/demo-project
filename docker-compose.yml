@@ -8,7 +8,6 @@ services:
       - "3001:3000"
     links:
       - uat-my-db
-    restart: unless-stopped
 
   uat-my-backend:
     image: priy8808/uat-backend:1
@@ -19,11 +18,14 @@ services:
       - "4007:4006"
     links:
       - uat-my-db
-    restart: unless-stopped
 
   uat-my-db:
     image: priy8808/uat-db:1
     container_name: uat-db
     ports:
       - "3307:3306"
-    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/mysql
+
+ volumes:
+   db_data:
