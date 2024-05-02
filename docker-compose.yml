@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  my-react-app:
+  prod-my-react-app:
     image: priy8808/prod-frontend:1
     container_name: my-react-app-prod
     ports:
       - "3002:3000"
     links:
-      - my-db
+      - prod-my-db
 
-  my-backend:
+  prod-my-backend:
     image: priy8808/prod-backend:1
     container_name: my-backend-prod
     environment:
@@ -17,9 +17,9 @@ services:
     ports:
       - "4008:4006"
     links:
-      - my-db
+      - prod-my-db
 
-  my-db:
+  prod-my-db:
     image: priy8808/prod-db:1
     container_name: prod-db
     ports:
