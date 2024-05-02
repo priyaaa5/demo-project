@@ -8,6 +8,7 @@ services:
       - "3000:3000"
     links:
       - my-db
+    restart: unless-stopped
 
   my-backend:
     image: priy8808/dev-backend:1
@@ -18,9 +19,11 @@ services:
       - "4006:4006"
     links:
       - my-db
+    restart: unless-stopped
 
   my-db:
     image: priy8808/dev-db:1
     container_name: dev-db
     ports:
       - "3306:3306"
+    restart: unless-stopped
