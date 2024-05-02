@@ -6,6 +6,7 @@ services:
     container_name: my-react-app-prod
     ports:
       - "3002:3000"
+      - "3003:3000"
     links:
       - prod-my-db
 
