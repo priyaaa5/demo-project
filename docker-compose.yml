@@ -24,3 +24,8 @@ services:
     container_name: prod-db
     ports:
       - "3308:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
