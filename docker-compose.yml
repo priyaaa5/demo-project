@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     links:
-      - my-db
+      - dev-my-db
 
   dev-my-backend:
     image: priy8808/dev-backend:1
@@ -17,7 +17,7 @@ services:
     ports:
       - "4006:4006"
     links:
-      - my-db
+      - dev-my-db
 
   dev-my-db:
     image: priy8808/dev-db:1
