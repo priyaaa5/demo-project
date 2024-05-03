@@ -21,7 +21,7 @@ services:
     image: priy8808/prod-backend:1
     container_name: my-backend-prod
     environment:
-      - APP_ENV=test
+      - APP_ENV=prod
     ports:
       - "4008:4006"
     links:
