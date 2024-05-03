@@ -13,7 +13,7 @@ services:
     image: priy8808/uat-backend:1
     container_name: my-backend-uat
     environment:
-      - APP_ENV=test
+      - APP_ENV=uat
     ports:
       - "4007:4006"
     links:
