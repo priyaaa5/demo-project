@@ -8,6 +8,13 @@ services:
       - "3002:3000"
     links:
       - prod-my-db
+  prod-my-react-app-2:
+    image: priy8808/prod-frontend:1
+    container_name: my-react-app-prod-2
+    ports:
+      - "3003:3000"
+    links:
+      - prod-my-db
 
   prod-my-backend:
     image: priy8808/prod-backend:1
