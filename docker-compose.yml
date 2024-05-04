@@ -1,39 +1,59 @@
 version: '3'
 
 services:
+
   prod-my-react-app-1:
     image: priy8808/prod-frontend:1
     container_name: my-react-app-prod-1
     ports:
       - "3002:3000"
     links:
-      - prod-my-db
+      - prod-my-db-1
 
-  # prod-my-react-app-2:
-  #   image: priy8808/prod-frontend:1
-  #   container_name: my-react-app-prod-2
-  #   ports:
-  #     - "3003:3000"
-  #   links:
-  #     - prod-my-db
-
-  prod-my-backend:
+  prod-my-backend-1:
     image: priy8808/prod-backend:1
-    container_name: my-backend-prod
+    container_name: my-backend-prod-1
     environment:
       - APP_ENV=prod
     ports:
       - "4008:4006"
     links:
-      - prod-my-db
+      - prod-my-db-1
 
-  prod-my-db:
+  prod-my-db-1:
     image: priy8808/prod-db:1
-    container_name: prod-db
+    container_name: prod-db-1
     ports:
       - "3308:3306"
     volumes:
-      - prod-db_data:/var/lib/mysql
+      - prod-db_data_1:/var/lib/mysql
+
+  prod-my-react-app-2:
+    image: priy8808/prod-frontend:1
+    container_name: my-react-app-prod-2
+    ports:
+      - "3003:3000"
+    links:
+      - prod-my-db-2
+
+  prod-my-backend-2:
+    image: priy8808/prod-backend:1
+    container_name: my-backend-prod-2
+    environment:
+      - APP_ENV=prod
+    ports:
+      - "4009:4006"
+    links:
+      - prod-my-db-2
+
+  prod-my-db-2:
+    image: priy8808/prod-db:1
+    container_name: prod-db-2
+    ports:
+      - "3309:3306"
+    volumes:
+      - prod-db_data_2:/var/lib/mysql
 
 volumes:
-  prod-db_data:
+  prod-db_data_1:
+  prod-db_data_2:
